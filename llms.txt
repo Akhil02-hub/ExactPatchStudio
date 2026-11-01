@@ -2,8 +2,7 @@
 
 > ExactPatch Studio is a free, browser-based find-and-replace tool for developers. It applies literal, case-sensitive FIND/REPLACE patches to any text or code file (HTML, CSS, JavaScript, TypeScript, Python, PHP, JSON, XML, YAML, Markdown, CSV, logs, config files, plain text). There is no server, no upload, no AI, no regex, and no code execution. All processing happens entirely inside the user's browser tab. The tool is deterministic: it never guesses, auto-corrects, or refactors. If a FIND block does not match exactly, that patch is skipped.
 
-- Website: https://exactpatch.studio/
-- Canonical URL: https://exactpatch.studio/
+- Website: https://exactpatchstudio/vercel.app/
 - Language: English
 - License: Free to use
 - Category: Developer tools / Text utilities / Code editing
@@ -14,7 +13,7 @@
 - Name: Amarachintha Akhil
 - Role: Founder & Creator
 - LinkedIn: https://www.linkedin.com/in/amarachinthaakhil/
-- Contact: hello@exactpatch.studio
+- Contact: amarachinthaakhil@gmail.com
 
 ## What the tool does
 
@@ -37,4 +36,110 @@ Key properties:
 2. The user loads a patch guide by uploading a Markdown/text file or pasting it into the "FIND / REPLACE guide" textarea.
 3. The guide must contain ordered pairs of fenced code blocks, labeled with bold Markdown headings in the form:
 
-   **FIND:**
+The label may optionally include a name in parentheses, e.g. `**FIND (heading fix):**`. Each FIND must be immediately followed by a REPLACE. A FIND that is not followed by a REPLACE is reported as a parsing error.
+4. The tool parses the guide using a line-anchored pattern that matches only the FIND/REPLACE labels. It extracts the contents of each fenced code block literally. No trimming, no normalization, no escaping is applied to the block contents.
+5. When the user clicks "Apply exact replacements", for each FIND/REPLACE pair the tool:
+- Adapts the FIND and REPLACE blocks to the source file's detected line-ending style.
+- Counts non-overlapping occurrences of the FIND text in the current working copy of the source.
+- In **Safe mode** (default): applies the replacement only if the FIND text occurs exactly once. If it occurs zero times or more than once, the patch is skipped and reported.
+- In **Replace all** mode: replaces every non-overlapping occurrence of the FIND text.
+- If FIND and REPLACE are identical, the patch is marked "unchanged" and the file is left untouched.
+6. Patches are applied sequentially to a working copy of the source. Later patches see the result of earlier ones.
+7. The tool produces:
+- A per-patch report with status (Applied / Skipped / Unchanged), the source line number of the first match, and a human-readable explanation.
+- A complete updated file in a read-only output textarea.
+- A "Copy full file" button and a "Download updated file" button. The downloaded file is named `<original-name>.patched.<ext>`.
+
+## Parsing rules for the FIND / REPLACE guide
+
+- A FIND or REPLACE label must be on its own line, surrounded by `**` bold markers, and followed by a fenced code block.
+- The opening fence may have a language tag (e.g. ```html) — the tag is ignored.
+- The closing fence must be ``` on its own line.
+- Content inside the fence is captured literally. Leading and trailing blank lines are trimmed only if they are the very first or very last line inside the fence, and only by one line.
+- If the guide has a different number of FIND labels and REPLACE labels, or if a pair is missing a valid fenced code block, the tool reports an error and disables the Apply button.
+
+## Match modes
+
+- **Safe mode (default):** Requires exactly one exact match per FIND block. Prevents accidental bulk changes. Recommended for code edits, refactors, and production files.
+- **Replace all exact matches:** Replaces every non-overlapping occurrence of the FIND block. Useful for renaming a variable, replacing a string across a file, etc.
+
+## Supported input types
+
+Any text-based file, including but not limited to:
+
+- HTML, HTM
+- CSS, SCSS, LESS
+- JavaScript, TypeScript, JSX, TSX, MJS, CJS
+- JSON, JSONC, JSON5
+- XML, SVG, XHTML
+- YAML, YML
+- Markdown, MDX
+- Python, Ruby, PHP, Java, Kotlin, Swift, Go, Rust, C, C++, C#, Objective-C
+- SQL
+- Shell scripts
+- INI, ENV, dotenv, TOML
+- CSV, TSV
+- Log files
+- Plain text
+
+## What the tool does NOT do
+
+- Does not use regular expressions.
+- Does not use AI or large language models.
+- Does not upload files anywhere.
+- Does not execute or evaluate code.
+- Does not format, lint, minify, or beautify code.
+- Does not refactor or rename symbols semantically.
+- Does not merge diffs or apply unified diffs / git patches.
+- Does not require an account, login, or payment.
+- Does not track users with cookies or analytics.
+
+## Why developers use it
+
+- To apply a precise, reviewable patch to a file without trusting an AI to "understand" the change.
+- To perform a deterministic bulk rename that they can verify line by line.
+- To edit configuration, template, or generated files safely in a browser.
+- To avoid uploading proprietary or sensitive source code to a third-party service.
+- To prepare a file for a pull request, commit, or code review with an auditable trail of exactly what changed.
+
+## Safety and privacy notes
+
+- Source files are never transmitted. The site has no backend that receives file content.
+- The tool works offline once the page has loaded.
+- The tool does not use `localStorage` for source content. It does store the user's theme preference (light/dark) under the key `exactpatch-theme`.
+- Downloaded output is generated locally via a `Blob` and `URL.createObjectURL`.
+- The author recommends keeping a backup of the original file until the output has been tested.
+
+## Technology
+
+- Single-page application.
+- Plain HTML, CSS, and vanilla JavaScript.
+- No frameworks, no build step, no dependencies, no bundler.
+- No third-party scripts for the core functionality.
+- Runs in any modern browser (Chrome, Firefox, Safari, Edge).
+- Works on desktop, tablet, and mobile.
+
+## Structured data on the site
+
+- WebSite schema
+- SoftwareApplication schema
+- BreadcrumbList schema
+- FAQPage schema
+- Organization schema (with founder linked to LinkedIn)
+- WebPage schema (with `speakable` specification)
+
+## Frequently asked questions
+
+- Is my code uploaded to a server? No. Everything runs in the browser.
+- Does it use regex or AI? Neither. Matching is literal and case-sensitive.
+- What file types are supported? Any text-based file.
+- What does Safe mode do? It requires exactly one match per FIND block; ambiguous patches are skipped.
+- Does it preserve line endings? Yes — LF, CRLF, and CR are detected and preserved.
+- Is it free? Yes.
+- Does it work offline? Yes, once the page has loaded.
+
+## Optional
+
+- Source repository / feedback: amarachinthaakhil@gmail.com
+- Founder on LinkedIn: https://www.linkedin.com/in/amarachinthaakhil/
+- Related resources page: https://exactpatch.studio/
