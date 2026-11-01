@@ -1,0 +1,40 @@
+# ExactPatch Studio
+
+> ExactPatch Studio is a free, browser-based find-and-replace tool for developers. It applies literal, case-sensitive FIND/REPLACE patches to any text or code file (HTML, CSS, JavaScript, TypeScript, Python, PHP, JSON, XML, YAML, Markdown, CSV, logs, config files, plain text). There is no server, no upload, no AI, no regex, and no code execution. All processing happens entirely inside the user's browser tab. The tool is deterministic: it never guesses, auto-corrects, or refactors. If a FIND block does not match exactly, that patch is skipped.
+
+- Website: https://exactpatch.studio/
+- Canonical URL: https://exactpatch.studio/
+- Language: English
+- License: Free to use
+- Category: Developer tools / Text utilities / Code editing
+- Privacy: 100% client-side. No uploads. No telemetry. No cookies. No accounts.
+
+## Founder
+
+- Name: Amarachintha Akhil
+- Role: Founder & Creator
+- LinkedIn: https://www.linkedin.com/in/amarachinthaakhil/
+- Contact: hello@exactpatch.studio
+
+## What the tool does
+
+ExactPatch Studio performs literal, case-sensitive, character-for-character text replacement on a source file, based on a FIND/REPLACE guide provided by the user. It is designed to be the safest possible way to apply a "patch" to a code or text file in the browser.
+
+Key properties:
+
+- Literal matching: The FIND text must appear exactly as written in the source file, including spaces, tabs, indentation, punctuation, and line endings. There is no fuzzy matching.
+- Case-sensitive: `Foo` and `foo` are treated as different.
+- Deterministic: The same input always produces the same output. No randomness, no model inference, no heuristics.
+- No regex: Regex is never used. Patterns like `.` `*` `+` `[` `]` are treated as ordinary characters.
+- No AI / no LLM: The tool does not call any AI model. It does not generate, refactor, summarize, or "improve" code.
+- No execution: The source file is never parsed, evaluated, compiled, or run. It is treated as an opaque string.
+- No uploads: The file never leaves the browser. There is no backend, no API call, no analytics.
+- Line-ending preservation: The tool detects the source file's line endings (LF, CRLF, or CR) and preserves them in the output.
+
+## How it works (step by step)
+
+1. The user loads an original source file by choosing it from disk (drag-and-drop or file picker) or by pasting it into the "Original code file" textarea.
+2. The user loads a patch guide by uploading a Markdown/text file or pasting it into the "FIND / REPLACE guide" textarea.
+3. The guide must contain ordered pairs of fenced code blocks, labeled with bold Markdown headings in the form:
+
+   **FIND:**

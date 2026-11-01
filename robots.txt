@@ -1,0 +1,27 @@
+# robots.txt for ExactPatch Studio
+# https://exactpatch.studio/
+
+User-agent: *
+Allow: /
+
+# Explicitly welcome major crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://exactpatch.studio/sitemap.xml
+
+# Be gentle with crawl rate
+Crawl-delay: 1

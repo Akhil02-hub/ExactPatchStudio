@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
+  <meta name="google-site-verification" content="Aj4jguP6VEZ94BsMCynn5EB7nNt-JFFVdkzViuLCl5I" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ExactPatch Studio — Safe Find & Replace Tool for Code | Literal, Deterministic, Privacy-First</title>
+  <title>ExactPatch Studio — Safe Find &amp; Replace Tool for Code</title>
   <meta name="description"
-    content="Free, browser-based find and replace tool for developers. Safely apply literal FIND/REPLACE patches to HTML, CSS, JavaScript, Python, PHP, JSON, XML and any text file. No uploads, no AI, no execution — 100% local, deterministic, and privacy-first.">
+    content="Free browser-based find and replace for developers. Apply literal FIND/REPLACE patches to any code file — no uploads, no AI, no execution, 100% local.">
   <meta name="author" content="ExactPatch Studio">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -150,6 +151,55 @@
   ]
 }
 </script>
+
+  <!-- SEO: additional social + organizational metadata -->
+  <meta name="thumbnail" content="https://placehold.co/1200x630/5b61e8/ffffff/png?text=ExactPatch+Studio">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:secure_url" content="https://placehold.co/1200x630/5b61e8/ffffff/png?text=ExactPatch+Studio">
+  <meta name="twitter:url" content="https://exactpatch.studio/">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://exactpatch.studio/#organization",
+      "name": "ExactPatch Studio",
+      "url": "https://exactpatch.studio/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://placehold.co/512x512/5b61e8/ffffff/png?text=ExactPatch",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": ["https://www.linkedin.com/in/amarachinthaakhil/"],
+      "founder": {
+        "@type": "Person",
+        "name": "Akhil",
+        "url": "https://www.linkedin.com/in/amarachinthaakhil/",
+        "sameAs": ["https://www.linkedin.com/in/amarachinthaakhil/"]
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://exactpatch.studio/#webpage",
+      "url": "https://exactpatch.studio/",
+      "name": "ExactPatch Studio — Safe Find & Replace Tool for Code",
+      "isPartOf": { "@id": "https://exactpatch.studio/#website" },
+      "about": { "@id": "https://exactpatch.studio/#app" },
+      "inLanguage": "en",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://placehold.co/1200x630/5b61e8/ffffff/png?text=ExactPatch+Studio"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".hero > div > p"]
+      }
+    }
+  ]
+}
+  </script>
   <style>
     :root {
       --bg: #f4f6fb;
@@ -442,7 +492,7 @@
       align-items: center;
       padding: 13px 15px;
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, .75);
+      background: var(--surface);
       border-radius: 14px;
     }
 
@@ -537,10 +587,10 @@
 
     .dropzone {
       position: relative;
-      border: 1.5px dashed #cbd3e3;
+      border: 1.5px dashed var(--line-strong);
       border-radius: 13px;
       padding: 15px;
-      background: #fafbfe;
+      background: var(--surface-2);
       display: flex;
       gap: 12px;
       align-items: center;
@@ -550,13 +600,13 @@
     .dropzone:hover,
     .dropzone.dragover {
       border-color: var(--accent);
-      background: #f3f4ff;
+      background: var(--surface-3);
     }
 
     .drop-icon {
       width: 36px;
       height: 36px;
-      background: #eceeff;
+      background: var(--accent-soft);
       color: var(--accent);
       border-radius: 11px;
       display: grid;
@@ -583,11 +633,11 @@
     }
 
     .file-btn {
-      border: 1px solid #dce1ed;
+      border: 1px solid var(--line);
       border-radius: 9px;
       padding: 7px 10px;
-      background: #fff;
-      color: #344055;
+      background: var(--surface);
+      color: var(--ink-2);
       font-size: 10px;
       font-weight: 800;
       white-space: nowrap;
@@ -606,10 +656,10 @@
       display: block;
       width: 100%;
       resize: vertical;
-      border: 1px solid #dfe4ee;
+      border: 1px solid var(--line);
       border-radius: 12px;
-      background: #fbfcfe;
-      color: #273448;
+      background: var(--surface-2);
+      color: var(--ink);
       outline: none;
       padding: 12px;
       font: 11px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -619,8 +669,8 @@
     }
 
     textarea:focus {
-      border-color: #9da1f3;
-      box-shadow: 0 0 0 3px rgba(91, 97, 232, .09);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
     }
 
     .source-editor {
@@ -661,7 +711,7 @@
       gap: 9px;
       align-items: flex-start;
       font-size: 11px;
-      color: #354155;
+      color: var(--ink-2);
       padding: 5px 0;
       cursor: pointer;
     }
@@ -719,13 +769,13 @@
     }
 
     .btn-light {
-      background: #f1f3f8;
-      color: #3c485b;
-      border: 1px solid #e2e6ee;
+      background: var(--surface-2);
+      color: var(--ink-2);
+      border: 1px solid var(--line);
     }
 
     .btn-light:hover {
-      background: #e9edf5;
+      background: var(--surface-3);
     }
 
     .btn-danger {
@@ -757,10 +807,10 @@
       width: 72px;
       height: 72px;
       border-radius: 22px;
-      background: linear-gradient(145deg, #eff0ff, #e9f5ff);
+      background: var(--surface-2);
       display: grid;
       place-items: center;
-      color: #666ce7;
+      color: var(--accent);
       margin-bottom: 17px;
     }
 
@@ -789,7 +839,7 @@
       border: 1px solid var(--line);
       border-radius: 12px;
       padding: 11px 12px;
-      background: #fcfcfe;
+      background: var(--surface-2);
     }
 
     .metric span {
@@ -878,7 +928,7 @@
       gap: 9px;
       align-items: start;
       padding: 10px 12px;
-      border-bottom: 1px solid #edf0f5;
+      border-bottom: 1px solid var(--line);
     }
 
     .report-item:last-child {
@@ -906,8 +956,8 @@
     }
 
     .status-unchanged {
-      background: #eef1f6;
-      color: #667286;
+      background: var(--surface-2);
+      color: var(--muted);
     }
 
     .report-name {
@@ -942,8 +992,8 @@
     }
 
     .tag-unchanged {
-      color: #667286;
-      background: #eef1f6;
+      color: var(--muted);
+      background: var(--surface-2);
     }
 
     .output-head {
@@ -991,8 +1041,8 @@
       gap: 9px;
       margin-top: 16px;
       padding: 11px 12px;
-      color: #657287;
-      background: #f7f9fc;
+      color: var(--muted);
+      background: var(--surface-2);
       border: 1px solid var(--line);
       border-radius: 11px;
       font-size: 10px;
@@ -1116,12 +1166,13 @@
       transform: translate(-50%, 15px);
       opacity: 0;
       pointer-events: none;
-      background: #202a3a;
-      color: #fff;
+      background: var(--surface-3);
+      color: var(--ink);
+      border: 1px solid var(--line);
       padding: 11px 15px;
       border-radius: 11px;
       font-size: 11px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, .2);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, .5);
       transition: .2s;
       z-index: 30;
     }
@@ -1220,6 +1271,187 @@
         margin-left: 48px;
       }
     }
+
+    /* ===============================
+       AUTHOR / LINKEDIN BUTTON
+       =============================== */
+    .author-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 38px;
+      padding: 0 14px 0 11px;
+      border-radius: 11px;
+      border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line));
+      background: linear-gradient(135deg, var(--accent-soft), var(--surface-2));
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease,
+        border-color .18s ease, color .18s ease;
+    }
+
+    .author-btn:hover,
+    .author-btn:focus-visible {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff;
+      box-shadow: var(--shadow-accent);
+      outline: none;
+    }
+
+    .author-btn:active {
+      transform: translateY(0);
+    }
+
+    .author-btn .author-ico {
+      width: 15px;
+      height: 15px;
+      flex: none;
+    }
+
+    .author-btn b {
+      font-weight: 900;
+    }
+
+    /* ===============================
+       GENERAL UI / UX POLISH
+       =============================== */
+    ::selection {
+      background: var(--accent-glow);
+      color: var(--ink);
+    }
+
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+      h1 {
+        background: linear-gradient(115deg, var(--ink) 22%, var(--accent) 94%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 11px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
+    }
+
+    .step,
+    .metric,
+    .report-item {
+      transition: transform .18s ease, box-shadow .18s ease,
+        border-color .18s ease, background-color .15s ease;
+    }
+
+    .step:hover,
+    .metric:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--accent) 38%, var(--line));
+      box-shadow: var(--shadow-sm);
+    }
+
+    .report-item:hover {
+      background: var(--surface-2);
+    }
+
+    .dropzone.dragover {
+      box-shadow: 0 0 0 4px var(--accent-glow);
+    }
+
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, .30) 50%, transparent 68%);
+      transform: translateX(-130%);
+      transition: transform .6s ease;
+      pointer-events: none;
+    }
+
+    .btn-primary:hover:not(:disabled)::after {
+      transform: translateX(130%);
+    }
+
+    .btn-light:hover {
+      border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+      color: var(--accent);
+    }
+
+    .resource-col a {
+      padding-left: 0;
+      transition: padding-left .15s ease, color .15s ease, border-color .15s ease;
+    }
+
+    .resource-col a:hover {
+      padding-left: 6px;
+    }
+
+    #results {
+      scroll-margin-top: 92px;
+    }
+
+    .footer-credit {
+      margin: 10px 0 0;
+      font-size: 11px;
+      letter-spacing: .02em;
+    }
+
+    .footer-credit a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color .15s ease;
+    }
+
+    .footer-credit a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    @media (max-width: 780px) {
+      .author-btn {
+        width: 38px;
+        padding: 0;
+        justify-content: center;
+      }
+
+      .author-btn span {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .local-pill {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
 </head>
 
@@ -1249,6 +1481,15 @@
         </svg>
       </button>
       <div class="local-pill"><span class="local-dot"></span> Runs locally in your browser</div>
+      <a class="author-btn" href="https://www.linkedin.com/in/amarachinthaakhil/" target="_blank"
+        rel="noopener noreferrer" aria-label="Made by Akhil — open LinkedIn profile in a new tab"
+        title="Made by Akhil · LinkedIn">
+        <svg class="author-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        </svg>
+        <span>Made by <b>Akhil</b></span>
+      </a>
     </div>
   </header>
 
@@ -1446,6 +1687,10 @@
       <span class="footer-sep">·</span>
       <span>&copy; <span id="footerYear">2026</span> ExactPatch</span>
     </div>
+    <p class="footer-credit">Made with care by
+      <a href="https://www.linkedin.com/in/amarachinthaakhil/" target="_blank" rel="noopener noreferrer">Akhil</a>
+      — connect on LinkedIn
+    </p>
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -1456,8 +1701,7 @@
       /* ---------- Theme toggle ---------- */
       try {
         const stored = localStorage.getItem('exactpatch-theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = stored || (prefersDark ? 'dark' : 'light');
+        const theme = stored || 'light'; // Forces default to white theme
         document.documentElement.setAttribute('data-theme', theme);
         const yearEl = document.getElementById('footerYear');
         if (yearEl) yearEl.textContent = new Date().getFullYear();
