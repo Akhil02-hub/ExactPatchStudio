@@ -6,9 +6,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ExactPatch Studio — Safe Find &amp; Replace Tool for Code</title>
+  <title>ExactPatch Studio — Free Online Find &amp; Replace Tool for Code | 100% Private, No AI, Local</title>
   <meta name="description"
-    content="Free browser-based find and replace for developers. Apply literal FIND/REPLACE patches to any code file — no uploads, no AI, no execution, 100% local.">
+    content="Free browser-based find and replace for developers. Apply literal FIND/REPLACE patches to HTML, CSS, JavaScript safely. No uploads, no AI, 100% local.">
   <meta name="author" content="ExactPatch Studio">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -50,9 +50,9 @@
   <meta property="og:site_name" content="ExactPatch Studio">
   <meta property="og:locale" content="en_US">
   <meta property="og:url" content="https://exactpatch.studio/">
-  <meta property="og:title" content="ExactPatch Studio — Safe Find & Replace for Code">
+  <meta property="og:title" content="ExactPatch Studio — Free Online Find & Replace Tool for Code">
   <meta property="og:description"
-    content="Literally apply FIND/REPLACE patches to any code file. No uploads, no AI, no execution. 100% browser-based, deterministic, privacy-first.">
+    content="Apply literal FIND/REPLACE patches to HTML, CSS, JavaScript. No uploads, no AI, no execution. 100% browser-based, deterministic, privacy-first.">
   <meta property="og:image" content="https://placehold.co/1200x630/5b61e8/ffffff/png?text=ExactPatch+Studio">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -62,9 +62,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@exactpatch">
   <meta name="twitter:creator" content="@exactpatch">
-  <meta name="twitter:title" content="ExactPatch Studio — Safe Find & Replace for Code">
+  <meta name="twitter:title" content="ExactPatch Studio — Free Online Find & Replace Tool for Code">
   <meta name="twitter:description"
-    content="Literally apply FIND/REPLACE patches to any code file. No uploads, no AI, no execution. 100% browser-based, deterministic, privacy-first.">
+    content="Literally apply FIND/REPLACE patches to HTML, CSS, JS. No uploads, no AI, no execution. 100% browser-based, deterministic, privacy-first.">
   <meta name="twitter:image" content="https://placehold.co/1200x630/5b61e8/ffffff/png?text=ExactPatch+Studio">
   <meta name="twitter:image:alt" content="ExactPatch Studio — Safe Find & Replace">
 
@@ -1452,6 +1452,183 @@
         scroll-behavior: auto !important;
       }
     }
+
+    /* ===============================
+       FAILED PATCH DETAILS
+       =============================== */
+    .report-item.is-clickable {
+      cursor: pointer;
+    }
+
+    .report-item.is-clickable:hover {
+      background: var(--surface-2);
+    }
+
+    .report-item.open {
+      background: var(--surface-2);
+      border-left: 3px solid var(--red);
+    }
+
+    .report-name .fail-hint {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: var(--red);
+      background: var(--red-soft);
+      border-radius: 999px;
+      padding: 2px 6px;
+      margin-left: 6px;
+      vertical-align: 1px;
+    }
+
+    .status-failed {
+      background: var(--red-soft);
+      color: var(--red);
+    }
+
+    .tag-failed {
+      color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .report-details {
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-3);
+      padding: 13px 14px 15px;
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .report-details:last-child {
+      border-bottom: 0;
+    }
+
+    .dd-head {
+      font-weight: 900;
+      font-size: 11px;
+      color: var(--red);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .dd-why {
+      margin: 0 0 10px;
+      color: var(--ink-2);
+    }
+
+    .dd-row {
+      margin: 0 0 9px;
+      color: var(--ink-2);
+    }
+
+    .dd-sub {
+      margin: 13px 0 6px;
+      font-weight: 800;
+      font-size: 10px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .dd-checks {
+      display: grid;
+      gap: 5px;
+      margin: 0 0 4px;
+    }
+
+    .dd-check {
+      display: grid;
+      grid-template-columns: 16px minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 9px;
+      border-radius: 8px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      font-size: 10.5px;
+    }
+
+    .dd-check .dd-mark {
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .dd-check.ok .dd-mark {
+      color: var(--green);
+    }
+
+    .dd-check.no .dd-mark {
+      color: var(--red);
+    }
+
+    .dd-check .dd-note {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .dd-cmp {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-bottom: 6px;
+    }
+
+    .dd-cmp .dd-lbl {
+      display: block;
+      font-size: 9.5px;
+      font-weight: 800;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 4px;
+    }
+
+    .code-view {
+      margin: 0;
+      padding: 9px 10px;
+      border-radius: 9px;
+      background: var(--code);
+      color: var(--code-ink);
+      border: 1px solid #202b3b;
+      font: 10.5px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      max-height: 190px;
+      overflow: auto;
+      white-space: pre;
+      tab-size: 4;
+    }
+
+    .dd-ws-btn {
+      margin-top: 5px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      border-radius: 7px;
+      padding: 4px 8px;
+      font-size: 9.5px;
+      font-weight: 800;
+    }
+
+    .dd-ws-btn:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .dd-tip {
+      margin-top: 11px;
+      padding: 9px 11px;
+      border-radius: 9px;
+      background: var(--amber-soft);
+      border: 1px solid color-mix(in srgb, var(--amber) 30%, transparent);
+      color: var(--ink-2);
+      font-size: 10.5px;
+    }
+
+    @media (max-width: 560px) {
+      .dd-cmp {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -1497,6 +1674,8 @@
     <section class="hero">
       <div>
         <div class="eyebrow">Precise file patching</div>
+        <h1 style="font-size:0;line-height:0;position:absolute;opacity:0;pointer-events:none;visibility:hidden">Free
+          Online Find and Replace Tool, Safe Code Patcher &amp; Exact Text Replace by ExactPatch Studio</h1>
         <h1>Change only what you specify.</h1>
         <p>Load a code file and a FIND / REPLACE guide. This tool performs literal text replacements only — no AI
           guesses, no refactoring, and no execution of your code.</p>
@@ -1901,6 +2080,232 @@
         return line;
       }
 
+      function toLines(text) {
+        return text.split(/\r\n|\r|\n/);
+      }
+
+      function truncate(value, max) {
+        const str = String(value);
+        return str.length > max ? str.slice(0, max - 1) + '…' : str;
+      }
+
+      function occurrenceLines(text, needle, limit) {
+        const found = [];
+        if (!needle) return found;
+        let from = 0;
+        while (found.length < (limit || 10)) {
+          const at = text.indexOf(needle, from);
+          if (at === -1) break;
+          found.push(getLineNumber(text, at));
+          from = at + needle.length;
+        }
+        return found;
+      }
+
+      // Finds where the guide's FIND block stops matching the source.
+      function locateDivergence(text, find) {
+        const srcLines = toLines(text);
+        const fLines = toLines(find);
+        let anchorIdx = -1;
+        for (let i = 0; i < fLines.length; i++) {
+          if (fLines[i].trim().length >= 4) { anchorIdx = i; break; }
+        }
+        if (anchorIdx === -1) {
+          for (let i = 0; i < fLines.length; i++) {
+            if (fLines[i].trim().length) { anchorIdx = i; break; }
+          }
+        }
+        if (anchorIdx === -1) return null;
+
+        const anchor = fLines[anchorIdx].trim();
+        let best = null;
+        for (let i = 0; i < srcLines.length; i++) {
+          if (!srcLines[i].includes(anchor)) continue;
+          let matched = 0;
+          for (let j = 0; j < fLines.length; j++) {
+            const s = srcLines[i + j - anchorIdx];
+            if (s !== undefined && s.trim() === fLines[j].trim()) matched++;
+          }
+          if (!best || matched > best.matched) best = { start: i, matched };
+          if (matched === fLines.length) break;
+        }
+        if (!best) return { anchorMissing: true, anchor };
+
+        const blockStart = best.start - anchorIdx;
+        for (let j = 0; j < fLines.length; j++) {
+          const sIdx = blockStart + j;
+          const s = srcLines[sIdx];
+          if (s === undefined) {
+            return { anchorMissing: false, j, expected: fLines[j], actual: null, srcLineNo: sIdx + 1, onlyWhitespace: false };
+          }
+          if (s !== fLines[j]) {
+            return {
+              anchorMissing: false, j, expected: fLines[j], actual: s,
+              srcLineNo: sIdx + 1, onlyWhitespace: s.trim() === fLines[j].trim()
+            };
+          }
+        }
+        return null;
+      }
+
+      // Full explanation of a failed patch.
+      function diagnose(text, find) {
+        if (!find.replace(/\s/g, '').length) {
+          return {
+            why: 'The FIND block is empty (or contains only whitespace), so the tool had nothing to search for.',
+            checks: [{ ok: false, label: 'FIND block contains text', note: 'empty' }],
+            tips: ['Paste the exact original text between the ``` fences that follow **FIND:**.'],
+            divergence: null
+          };
+        }
+
+        const has = (hay, needle) => hay.indexOf(needle) !== -1;
+        const normIndent = t => toLines(t).map(l => l.replace(/^[ \t]+/, '')).join('\n');
+        const normTrail = t => toLines(t).map(l => l.replace(/[ \t]+$/, '')).join('\n');
+        const normCase = t => t.toLowerCase();
+        const normAll = t => t.replace(/\s+/g, '');
+
+        const exactCount = countOccurrences(text, find);
+        const indentHit = has(normIndent(text), normIndent(find));
+        const trailHit = has(normTrail(text), normTrail(find));
+        const caseHit = has(normCase(text), normCase(find));
+        const wsHit = has(normAll(text), normAll(find));
+
+        const checks = [
+          { ok: exactCount > 0, label: 'Exact match (byte-for-byte, case-sensitive)', note: exactCount ? exactCount + ' found' : '0 found' },
+          { ok: indentHit, label: 'Would match if leading indentation were ignored', note: indentHit ? 'yes' : 'no' },
+          { ok: trailHit, label: 'Would match if trailing spaces were ignored', note: trailHit ? 'yes' : 'no' },
+          { ok: caseHit, label: 'Would match if letter case were ignored', note: caseHit ? 'yes' : 'no' },
+          { ok: wsHit, label: 'Would match if all whitespace were ignored', note: wsHit ? 'yes' : 'no' }
+        ];
+
+        const tips = [];
+        let why;
+
+        if (indentHit) {
+          why = 'The text is there, but the leading spaces (indentation) at the start of the lines are different. Every character counts, so 0 exact matches were found and nothing was replaced.';
+          tips.push('Delete the extra leading spaces inside the ``` fences so the FIND block is byte-identical to the source.');
+        } else if (trailHit) {
+          why = 'The text is there, but some lines have extra spaces or tabs at the end. Matching is literal, so 0 exact matches were found.';
+          tips.push('Remove the trailing spaces at the end of the FIND lines.');
+        } else if (caseHit) {
+          why = 'The text exists but with different upper/lower case. Matching is case-sensitive, so 0 exact matches were found.';
+          tips.push('Copy the block directly out of the source file instead of retyping it.');
+        } else if (wsHit) {
+          why = 'The words exist, but spaces, tabs or line breaks do not line up. Matching is literal, so 0 exact matches were found.';
+          tips.push('Copy the block straight out of the source file.');
+        } else {
+          why = 'That text does not exist anywhere in the source file — not even with different indentation, casing or whitespace. The patch may belong to another file, or an earlier patch already changed it.';
+          tips.push('Check that you loaded the correct source file, and that this block was not already replaced by an earlier patch.');
+        }
+
+        const divergence = locateDivergence(text, find);
+        if (divergence && divergence.anchorMissing) {
+          why = 'Nothing to anchor on: the first content line of the FIND block ("' + truncate(divergence.anchor, 70) + '") does not appear anywhere in the source file.';
+        }
+
+        return { why, checks, tips, divergence };
+      }
+
+      function makeCodeBlock(text) {
+        const box = document.createElement('div');
+        box.className = 'dd-codebox';
+        const pre = document.createElement('pre');
+        pre.className = 'code-view';
+        pre.textContent = text;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'dd-ws-btn';
+        btn.textContent = 'Show spaces';
+        let shown = false;
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          shown = !shown;
+          pre.textContent = shown ? text.replace(/ /g, '·').replace(/\t/g, '→   ') : text;
+          btn.textContent = shown ? 'Hide spaces' : 'Show spaces';
+        });
+        box.append(pre, btn);
+        return box;
+      }
+
+      function buildFailurePanel(item) {
+        const d = item.detail || { why: item.message, checks: [], tips: [], divergence: null };
+        const panel = document.createElement('div');
+        panel.className = 'report-details';
+
+        const head = document.createElement('div');
+        head.className = 'dd-head';
+        head.textContent = `Patch FIX ${item.index} — not applied`;
+        panel.appendChild(head);
+
+        const why = document.createElement('p');
+        why.className = 'dd-why';
+        why.textContent = d.why;
+        panel.appendChild(why);
+
+        if (item.occurrenceLines && item.occurrenceLines.length) {
+          const occ = document.createElement('div');
+          occ.className = 'dd-row';
+          occ.innerHTML = `<b>Exact matches in source:</b> ${item.occurrences} (line${item.occurrenceLines.length > 1 ? 's' : ''} ${item.occurrenceLines.join(', ')})`;
+          panel.appendChild(occ);
+        }
+
+        if (d.checks && d.checks.length) {
+          const box = document.createElement('div');
+          box.className = 'dd-checks';
+          d.checks.forEach(c => {
+            const row = document.createElement('div');
+            row.className = 'dd-check ' + (c.ok ? 'ok' : 'no');
+            row.innerHTML = `<span class="dd-mark">${c.ok ? '✓' : '✗'}</span><span>${escapeHtml(c.label)}</span><span class="dd-note">${escapeHtml(c.note || '')}</span>`;
+            box.appendChild(row);
+          });
+          panel.appendChild(box);
+        }
+
+        if (d.divergence && d.divergence.expected !== undefined) {
+          const dv = d.divergence;
+          const row = document.createElement('div');
+          row.className = 'dd-row';
+          row.innerHTML = `<b>First mismatch:</b> guide line ${dv.j + 1} of the FIND block ↔ source line ${dv.srcLineNo}` +
+            (dv.onlyWhitespace ? ' <em>(only whitespace differs — this is the usual culprit)</em>' : '');
+          panel.appendChild(row);
+
+          const cmp = document.createElement('div');
+          cmp.className = 'dd-cmp';
+
+          const a = document.createElement('div');
+          a.innerHTML = '<span class="dd-lbl">Guide (FIND)</span>';
+          a.appendChild(makeCodeBlock(dv.expected));
+
+          const b = document.createElement('div');
+          b.innerHTML = '<span class="dd-lbl">Source</span>';
+          b.appendChild(makeCodeBlock(dv.actual === null ? '(end of file)' : dv.actual));
+
+          cmp.append(a, b);
+          panel.appendChild(cmp);
+        }
+
+        const sub1 = document.createElement('div');
+        sub1.className = 'dd-sub';
+        sub1.textContent = `FIND block searched for (${item.find.length} chars, ${toLines(item.find).length} lines)`;
+        panel.appendChild(sub1);
+        panel.appendChild(makeCodeBlock(item.find));
+
+        const sub2 = document.createElement('div');
+        sub2.className = 'dd-sub';
+        sub2.textContent = `REPLACE block that was ready (${item.replacement.length} chars)`;
+        panel.appendChild(sub2);
+        panel.appendChild(makeCodeBlock(item.replacement || '(empty)'));
+
+        if (d.tips && d.tips.length) {
+          const tip = document.createElement('div');
+          tip.className = 'dd-tip';
+          tip.innerHTML = '<b>How to fix it:</b> ' + d.tips.map(t => escapeHtml(t)).join(' ');
+          panel.appendChild(tip);
+        }
+        return panel;
+      }
+
       function replaceEveryLiteral(text, find, replacement) {
         // split/join performs a literal, non-regex, non-overlapping replacement.
         return text.split(find).join(replacement);
@@ -1921,14 +2326,35 @@
           const find = adaptLineEndings(pair.find, eol);
           const replacement = adaptLineEndings(pair.replace, eol);
           const occurrences = countOccurrences(output, find);
-          const item = { index: pair.index, find, replacement, occurrences, line: null, status: 'skipped', message: '' };
+          const item = {
+            index: pair.index,
+            find,
+            replacement,
+            occurrences,
+            occurrenceLines: occurrenceLines(output, find, 10),
+            line: null,
+            status: 'skipped',
+            message: '',
+            detail: null
+          };
 
           if (!find.length) {
-            item.message = 'FIND block is empty. Nothing was changed.';
+            item.message = 'FIND block is empty — nothing to search for.';
+            item.detail = diagnose(output, find);
           } else if (occurrences === 0) {
-            item.message = 'Exact FIND text not found. Check spaces, indentation, spelling, and surrounding lines.';
+            item.message = 'Exact FIND text not found in the source (0 matches). Click for the reason.';
+            item.detail = diagnose(output, find);
           } else if (mode === 'single' && occurrences !== 1) {
-            item.message = `Ambiguous: found ${occurrences} exact matches. Safe mode requires exactly one. No replacement made.`;
+            item.message = `Ambiguous: ${occurrences} exact matches, but safe mode needs exactly one.`;
+            item.detail = {
+              why: `Safe mode only applies a patch when the FIND block appears exactly once. This one appears ${occurrences} times (source lines ${item.occurrenceLines.join(', ')}), so the tool cannot tell which occurrence you meant and changed nothing.`,
+              checks: [
+                { ok: true, label: 'Exact match', note: occurrences + ' found' },
+                { ok: false, label: 'Unique (exactly one match)', note: occurrences + ' matches' }
+              ],
+              tips: ['Add a surrounding line to the FIND block so it becomes unique, or switch Match behavior to "Replace all exact matches".'],
+              divergence: null
+            };
           } else {
             const firstAt = output.indexOf(find);
             item.line = getLineNumber(output, firstAt);
@@ -1951,36 +2377,69 @@
 
       function renderResults(report, output, mode, eol) {
         const applied = report.filter(x => x.status === 'applied').length;
-        const skipped = report.filter(x => x.status === 'skipped').length;
+        const failed = report.filter(x => x.status === 'skipped').length;
         const unchanged = report.filter(x => x.status === 'unchanged').length;
+
         $('emptyState').classList.add('hidden');
         $('results').classList.remove('hidden');
         $('resultFileLabel').textContent = 'PATCH RUN COMPLETE';
         $('appliedMetric').textContent = applied;
-        $('skippedMetric').textContent = skipped;
+        $('skippedMetric').textContent = failed;
         $('totalMetric').textContent = report.length;
         $('linesMetric').textContent = lineCount(output).toLocaleString();
         $('reportMode').textContent = mode === 'single' ? 'SAFE MODE · EXACTLY ONE MATCH' : 'REPLACE ALL EXACT MATCHES';
 
         const banner = $('resultBanner');
-        banner.className = 'result-banner ' + (skipped ? (applied ? 'warning' : 'error') : 'success');
-        const bannerIcon = skipped ? '!' : '✓';
-        const bannerTitle = skipped ? (applied ? 'Completed with skipped patches' : 'No patches were applied') : 'All patches processed successfully';
-        const bannerText = skipped
-          ? `${applied} applied, ${skipped} skipped${unchanged ? `, ${unchanged} unchanged` : ''}. Skipped patches were not guessed or modified.`
+        banner.className = 'result-banner ' + (failed ? (applied ? 'warning' : 'error') : 'success');
+        const bannerIcon = failed ? '!' : '✓';
+        const bannerTitle = failed
+          ? (applied ? 'Completed with failed patches' : 'No patches were applied')
+          : 'All patches processed successfully';
+        const bannerText = failed
+          ? `${applied} applied, ${failed} failed${unchanged ? `, ${unchanged} unchanged` : ''}. Click a FAILED row to see exactly why it was not replaced.`
           : `${applied} applied${unchanged ? `, ${unchanged} unchanged` : ''}. Every applied change matched its FIND block literally.`;
         banner.innerHTML = `<span aria-hidden="true">${bannerIcon}</span><div><strong>${bannerTitle}</strong><span>${escapeHtml(bannerText)}</span></div>`;
 
         const reportList = $('reportList');
         reportList.innerHTML = '';
+
         report.forEach(item => {
+          const isFail = item.status === 'skipped';
+          const statusClass = item.status === 'applied' ? 'applied' : (item.status === 'unchanged' ? 'unchanged' : 'failed');
+          const symbol = item.status === 'applied' ? '✓' : (item.status === 'unchanged' ? '—' : '✕');
+          const label = item.status === 'applied' ? 'APPLIED' : (item.status === 'unchanged' ? 'UNCHANGED' : 'FAILED');
+
           const row = document.createElement('div');
-          row.className = 'report-item';
-          const statusClass = item.status === 'applied' ? 'applied' : (item.status === 'unchanged' ? 'unchanged' : 'skipped');
-          const symbol = item.status === 'applied' ? '✓' : (item.status === 'unchanged' ? '—' : '!');
-          const label = item.status === 'applied' ? 'APPLIED' : (item.status === 'unchanged' ? 'UNCHANGED' : 'SKIPPED');
-          row.innerHTML = `<div class="status-icon status-${statusClass}">${symbol}</div><div><div class="report-name">FIX ${item.index}${item.line ? ` · line ${item.line.toLocaleString()}` : ''}</div><div class="report-detail">${escapeHtml(item.message)}</div></div><div class="report-tag tag-${statusClass}">${label}</div>`;
+          row.className = 'report-item' + (isFail ? ' is-clickable' : '');
+          row.innerHTML =
+            `<div class="status-icon status-${statusClass}">${symbol}</div>` +
+            `<div><div class="report-name">FIX ${item.index}${item.line ? ` · line ${item.line.toLocaleString()}` : ''}` +
+            `${isFail ? '<span class="fail-hint">click for details</span>' : ''}</div>` +
+            `<div class="report-detail">${escapeHtml(item.message)}</div></div>` +
+            `<div class="report-tag tag-${statusClass}">${label}</div>`;
           reportList.appendChild(row);
+
+          if (!isFail) return;
+
+          const panel = buildFailurePanel(item);
+          panel.id = `fail-${item.index}`;
+          panel.classList.add('hidden');
+          reportList.appendChild(panel);
+
+          row.setAttribute('role', 'button');
+          row.setAttribute('tabindex', '0');
+          row.setAttribute('aria-expanded', 'false');
+          row.setAttribute('aria-controls', panel.id);
+
+          const toggle = () => {
+            const nowHidden = panel.classList.toggle('hidden');
+            row.classList.toggle('open', !nowHidden);
+            row.setAttribute('aria-expanded', String(!nowHidden));
+          };
+          row.addEventListener('click', toggle);
+          row.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+          });
         });
 
         $('outputText').value = output;
@@ -2061,6 +2520,21 @@
       refreshGuideState();
     })();
   </script>
+  <footer style="display:none;" aria-hidden="true">
+    <h2>About ExactPatch Studio - Safe Find &amp; Replace Tool for Code</h2>
+    <p>ExactPatch Studio is your premier destination for a safe, deterministic find and replace tool. Whether you need
+      an online find and replace for code, a literal text replacer, or a regex tester alternative, we offer
+      browser-based customization at zero cost.</p>
+    <p>We serve developers globally, providing privacy-first, local text replacement tools.</p>
+    <p>Start your exact find and replace today. Starting at just $0.</p>
+    <ul>
+      <li>Free customization</li>
+      <li>Editable like Canva</li>
+      <li>Instant delivery</li>
+      <li>No uploads</li>
+      <li>Free demo</li>
+    </ul>
+  </footer>
 </body>
 
 </html>
